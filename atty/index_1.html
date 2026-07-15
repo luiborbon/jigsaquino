@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atty. Jay Lord B. Aquino — Professional &amp; Legal Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Brand guide: navy / gold / cream / charcoal */
+    --navy: #15204a;
+    --navy-deep: #0c1330;
+    --cream: #f4efe6;
+    --cream-soft: #ece2d0;
+    --coral: #c9a24a;
+    --coral-soft: #e0c077;
+    --gold: #c9a24a;
+    --ink: #1c232c;
+    --muted: #a6adc9;
+    --muted-ink: #5c5b52;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  h1,h2,h3{ font-family: 'Playfair Display', Georgia, serif; font-weight: 600; }
+  a{ color: inherit; text-decoration: none; }
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .eyebrow{
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600; color: var(--coral-soft);
+  }
+
+  /* NAV */
+  nav{
+    position: sticky; top:0; z-index: 50;
+    background: var(--navy); color: var(--cream);
+    border-bottom: 1px solid rgba(245,240,228,0.12);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height: 64px; }
+  .brand{ font-family:'Playfair Display',serif; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .brand strong{ color: var(--coral-soft); }
+  nav ul{ list-style:none; display:flex; gap: 28px; }
+  nav a{ font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+  nav a:hover{ color: var(--cream); }
+
+  /* HERO */
+  header.hero{
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--cream);
+    padding: 100px 0 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 85% 20%, rgba(184,147,76,0.10), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(193,88,59,0.12), transparent 40%);
+    pointer-events:none;
+  }
+  .hero-inner{ max-width: 640px; min-width: 0; position: relative; z-index: 2; }
+  .hero-inner .eyebrow{ margin-bottom: 22px; display:block; }
+  .hero-inner h1{
+    font-size: 52px; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.01em;
+  }
+  .hero-inner .role-line{
+    font-size: 17px; color: var(--muted); margin-bottom: 36px; font-weight: 500;
+  }
+  .hero-inner .role-line .dot{ color: var(--gold); margin: 0 10px; }
+  .hero-cta{ display:flex; gap: 16px; flex-wrap: wrap; }
+  .btn{
+    display:inline-block; padding: 13px 28px; font-size: 13px; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 600; border-radius: 2px; transition: all .2s;
+  }
+  .btn-primary{ background: var(--coral); color: var(--navy-deep); }
+  .btn-primary:hover{ background: var(--coral-soft); }
+  .btn-ghost{ border: 1px solid rgba(245,240,228,0.35); color: var(--cream); }
+  .btn-ghost:hover{ border-color: var(--cream); }
+
+  .hero-mark{
+    position:absolute; right: -30px; top:50%; transform: translateY(-50%);
+    font-family:'Playfair Display',serif; font-size: 280px; font-weight:700;
+    color: rgba(245,240,228,0.045); line-height:1; z-index:0; pointer-events:none;
+  }
+
+  /* SECTION LABEL */
+  .section-head{ margin-bottom: 56px; }
+  .section-head .eyebrow{ margin-bottom: 12px; color: var(--coral); }
+  .section-head h2{ font-size: 34px; color: var(--navy); }
+  .section-head p{ margin-top: 14px; max-width: 560px; color: var(--muted-ink); font-size: 15px; }
+
+  /* TIMELINE / CAREER CARDS (shared visual language with main site) */
+  section.career{ padding: 110px 0 70px; }
+  .timeline{ position: relative; }
+  .timeline::before{
+    content:""; position:absolute; left: 130px; top: 8px; bottom: 8px; width: 1px;
+    background: linear-gradient(var(--coral-soft), var(--cream-soft));
+  }
+  .t-item{
+    display:grid; grid-template-columns: 130px 1fr; gap: 40px;
+    position: relative; padding-bottom: 44px;
+  }
+  .t-item:last-child{ padding-bottom: 0; }
+  .t-year{
+    font-family:'Playfair Display',serif; font-weight:600; font-size: 13px; color: var(--navy);
+    padding-top: 2px; padding-right: 16px; text-align: right; letter-spacing: .02em;
+  }
+  .t-item::after{
+    content:""; position:absolute; left: 126px; top: 8px; width: 9px; height:9px;
+    border-radius:50%; background: var(--coral); border: 3px solid var(--cream);
+    box-shadow: 0 0 0 1px var(--coral-soft);
+  }
+  .t-card{
+    background: #fff; border: 1px solid var(--cream-soft); border-radius: 6px;
+    padding: 26px 30px; box-shadow: 0 6px 20px rgba(31,39,72,0.05);
+  }
+  .t-card h3{ font-size: 19px; color: var(--navy); margin-bottom: 4px; }
+  .t-card .t-sub{ font-size: 12px; letter-spacing:.08em; text-transform:uppercase; color: var(--coral); font-weight:700; margin-bottom: 12px; }
+  .t-card p{ font-size: 14px; color: var(--muted-ink); }
+
+  @media (max-width: 720px){
+    .timeline::before{ left: 8px; }
+    .t-item{ grid-template-columns: 1fr; gap: 10px; padding-left: 26px; }
+    .t-item::after{ left: 4px; }
+    .t-year{ text-align:left; }
+  }
+
+  /* EDUCATION */
+  section.education{ padding: 0 0 110px; }
+  .ed-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .ed-card{
+    background:#fff; border:1px solid var(--cream-soft); border-radius:6px;
+    padding: 24px 26px; box-shadow: 0 6px 20px rgba(31,39,72,0.05);
+  }
+  .ed-card .ed-label{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); font-weight:700; margin-bottom:8px; }
+  .ed-card .ed-title{ font-family:'Playfair Display',serif; font-size:17px; color:var(--navy); margin-bottom:4px; }
+  .ed-card .ed-sub{ font-size:13px; color:var(--muted-ink); }
+  @media (max-width: 720px){ .ed-grid{ grid-template-columns: 1fr; } }
+
+  /* PHILOSOPHY / QUOTE */
+  section.philosophy{
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--cream); padding: 90px 0; position: relative; overflow: hidden; text-align:center;
+  }
+  section.philosophy .wrap{ max-width: 760px; }
+  section.philosophy .eyebrow{ margin-bottom: 22px; }
+  section.philosophy blockquote{
+    font-family:'Playfair Display',serif; font-size: 24px; line-height:1.5;
+    color: var(--cream); font-weight: 500; font-style: italic;
+  }
+  section.philosophy .quote-mark{ color: var(--coral-soft); font-size: 40px; line-height:0; }
+
+  /* FOOTER (shared) */
+  footer{ background: var(--navy-deep); color: var(--muted); padding: 64px 0 36px; }
+  .footer-badges{
+    display:flex; gap: 20px; flex-wrap: wrap; margin-bottom: 48px;
+    padding-bottom: 44px; border-bottom: 1px solid rgba(245,240,228,0.08);
+  }
+  .badge{
+    display:flex; align-items:center; gap: 12px; padding: 12px 18px;
+    border: 1px solid rgba(245,240,228,0.1); border-radius: 6px;
+    background: rgba(245,240,228,0.03); flex: 1 1 260px;
+    transition: background .2s, border-color .2s;
+  }
+  .badge:hover{ background: rgba(245,240,228,0.06); border-color: rgba(245,240,228,0.2); }
+  .badge svg{ flex-shrink:0; opacity: 0.85; }
+  .badge-text .b-label{ font-size: 10px; letter-spacing:.14em; text-transform:uppercase; color: var(--gold); font-weight:600; margin-bottom: 3px; }
+  .badge-text .b-main{ font-size: 14px; color: var(--cream); font-weight:500; }
+  .badge-text .b-sub{ font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 12px;
+    font-size: 12.5px; color: var(--muted);
+  }
+  .footer-bottom .fname{ font-family:'Playfair Display',serif; color: var(--cream); font-size: 15px; }
+  .footer-links a{ color: var(--cream); transition: color .2s; }
+  .footer-links a:hover{ color: var(--coral-soft); }
+
+  @media (max-width: 860px){
+    header.hero{ padding-top: 84px; }
+  }
+  @media (max-width: 720px){
+    nav .wrap{ height: auto; padding-top: 14px; padding-bottom: 14px; gap: 14px; flex-wrap: nowrap; }
+    .brand{ font-size: 13px; letter-spacing: 0.08em; flex-shrink: 0; }
+    nav ul{
+      gap: 18px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; mask-image: linear-gradient(to right, black 88%, transparent 100%);
+    }
+    nav ul::-webkit-scrollbar{ display:none; }
+    nav li{ flex-shrink: 0; }
+    .hero-inner h1{ font-size: 34px; }
+    section.philosophy blockquote{ font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Jay Lord <strong>B.</strong> Aquino</div>
+    <ul>
+      <li><a href="https://jigsaquino.com">APO Home</a></li>
+      <li><a href="#career">Professional Career</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="mailto:atty@jigsaquino.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-mark">JA</div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Professional &amp; Legal Practice</span>
+      <h1>Jay Lord B. Aquino</h1>
+      <div class="role-line">Country Legal Counsel<span class="dot">&middot;</span>Governance Practitioner<span class="dot">&middot;</span>Educator</div>
+      <div class="hero-cta">
+        <a href="#career" class="btn btn-primary">Professional Career</a>
+        <a href="mailto:atty@jigsaquino.com" class="btn btn-ghost">Contact</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="career" id="career">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Professional Career</span>
+      <h2>Two decades of legal practice</h2>
+      <p>Spanning corporate law, labor and employment, commercial transactions, public administration, and legal education across the private and public sectors.</p>
+    </div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-year">Current</div>
+        <div class="t-card">
+          <h3>Country Legal Counsel</h3>
+          <div class="t-sub">Conduent Philippines</div>
+          <p>Strategic legal leadership on labor and employment, commercial transactions, corporate governance, litigation management, regulatory compliance, ethics, investigations, data privacy, and enterprise risk management.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Current</div>
+        <div class="t-card">
+          <h3>Director &amp; Head of Legal Operations</h3>
+          <div class="t-sub">AIG Shared Services</div>
+          <p>Leads legal operations and strategic legal support across Asia-Pacific, Europe, and North America, driving operational excellence and legal transformation across multiple jurisdictions.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Current</div>
+        <div class="t-card">
+          <h3>Legal Counsel</h3>
+          <div class="t-sub">Quezon City Government</div>
+          <p>Legal advice on government procurement, public contracts, government property administration, asset management, and Commission on Audit compliance.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Former</div>
+        <div class="t-card">
+          <h3>Legal Counsel</h3>
+          <div class="t-sub">QC Procurement Department &amp; Bids and Awards Committee</div>
+          <p>Advised on major public infrastructure projects, government procurement, contract administration, and compliance with the Government Procurement Reform Act.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Academic</div>
+        <div class="t-card">
+          <h3>Professor of Law</h3>
+          <div class="t-sub">Philippine Law School</div>
+          <p>Also served as an instructor in Economics and Political Science at the University of the Philippines&ndash;Baguio, reflecting an enduring commitment to legal education and leadership development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="education" id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Education</span>
+      <h2>Academic background</h2>
+    </div>
+    <div class="ed-grid">
+      <div class="ed-card">
+        <div class="ed-label">Law</div>
+        <div class="ed-title">Bachelor of Laws, with Honors</div>
+        <div class="ed-sub">University of the Cordilleras</div>
+      </div>
+      <div class="ed-card">
+        <div class="ed-label">Bar Admission</div>
+        <div class="ed-title">Philippine Bar, 2006</div>
+        <div class="ed-sub">Admitted to practice law in the Philippines</div>
+      </div>
+      <div class="ed-card">
+        <div class="ed-label">Undergraduate</div>
+        <div class="ed-title">B.A. Economics</div>
+        <div class="ed-sub">University of the Philippines&ndash;Baguio</div>
+      </div>
+      <div class="ed-card">
+        <div class="ed-label">Undergraduate</div>
+        <div class="ed-title">B.A. Political Science</div>
+        <div class="ed-sub">University of the Philippines&ndash;Baguio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="wrap">
+    <span class="eyebrow">Professional Philosophy</span>
+    <blockquote>
+      <span class="quote-mark">&ldquo;</span>Enduring organizations are built upon integrity, accountability, excellence, and service &mdash; strengthened through ethical leadership, constitutional governance, strategic organizational reform, and the rule of law.<span class="quote-mark">&rdquo;</span>
+    </blockquote>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap">
+    <div class="footer-badges">
+      <a class="badge" href="https://jigsaquino.com">
+        <svg width="30" height="30" viewBox="0 0 100 100" fill="none">
+          <path d="M50 8 L90 26 V50 C90 72 73 88 50 94 C27 88 10 72 10 50 V26 Z" stroke="#c9a24a" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M50 30 L64 38 V56 L50 64 L36 56 V38 Z" stroke="#c9a24a" stroke-width="3.4" stroke-linejoin="round"/>
+        </svg>
+        <div class="badge-text">
+          <div class="b-label">Fraternal Leadership</div>
+          <div class="b-main">Alpha Phi Omega Philippines, Inc.</div>
+          <div class="b-sub">jigsaquino.com &rarr;</div>
+        </div>
+      </a>
+      <a class="badge" href="https://bro.jigsaquino.com">
+        <svg width="30" height="30" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="14" r="8" stroke="#c9a24a" stroke-width="3"/>
+          <circle cx="50" cy="14" r="2.2" fill="#c9a24a"/>
+          <path d="M50 22 L20 58 L10 66" stroke="#c9a24a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M50 22 L80 58 L90 66" stroke="#c9a24a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M50 92 L18 64 L6 58" stroke="#c9a24a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M50 92 L82 64 L94 58" stroke="#c9a24a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="50" y="63" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="34" fill="#c9a24a">G</text>
+        </svg>
+        <div class="badge-text">
+          <div class="b-label">Freemasonry</div>
+          <div class="b-main">Sultan Haroun Al&ndash;Rashid M. Lucman Lodge No. 406</div>
+          <div class="b-sub">bro.jigsaquino.com &rarr;</div>
+        </div>
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <div class="fname">Jay Lord B. Aquino</div>
+      <div class="footer-links"><a href="mailto:atty@jigsaquino.com">atty@jigsaquino.com</a></div>
+      <div>&copy; 2026 &middot; atty.jigsaquino.com</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
